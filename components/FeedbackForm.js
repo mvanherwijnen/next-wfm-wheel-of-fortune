@@ -1,21 +1,13 @@
 import styles from './FeedbackForm.module.css'
 
 export default function FeedbackForm() {
+  const submitHandler = async (e) => {
+    console.log(JSON.stringify(e.target));
+    await fetch("/.netlify/functions/lead", {method: 'POST', body: JSON.stringify({name: 'Kees', email: 'kees@keesie.nl'})})
+    window.URL = "/success"
+  }
   return (
-      <form
-        className={styles.form}
-        data-netlify="true"
-        data-netlify-honeypot="bot-field"
-        name="feedback"
-        method="POST"
-        action="/success"
-      >
-        <input type="hidden" name="form-name" value="feedback" />
-        <p className={styles.hidden}>
-            <label>
-            Don’t fill this out if you’re human: <input name="bot-field" />
-            </label>
-        </p>
+      <form onSubmit={submitHandler}>
   
         <label htmlFor="name">Naam</label>
         <input id="name" className={styles['form-field']} type="text" name="name" />
