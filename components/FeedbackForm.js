@@ -6,7 +6,6 @@ export default function FeedbackForm() {
   const [email, setEmail] = useState('');
 
   const submitHandler = async () => {
-    console.log(JSON.stringify(e.target));
     await fetch("/.netlify/functions/lead", {method: 'POST', body: JSON.stringify({name, email})})
     window.URL = "/success"
   }
