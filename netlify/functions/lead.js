@@ -11,7 +11,7 @@ export const handler = async (event) => {
     }
     const deal = {
         properties: {
-            name: `Rad van fortuin van ${name}`,
+            dealname: `Rad van fortuin van ${name}`,
             amount: 1945
         }
     }
