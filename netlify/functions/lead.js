@@ -4,7 +4,7 @@ export const handler = async (event) => {
     const client = new Client({accessToken: process.env.HUBSPOT_API_KEY})
     const contact = {
         properties: {
-            firstName: "Henk",
+            firstname: "Henk",
             email: "henk405@hotmail.com"
         }
     }
