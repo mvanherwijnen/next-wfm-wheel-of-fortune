@@ -1,7 +1,7 @@
 import { Client } from '@hubspot/api-client';
 
 export const handler = async (event) => {
-    const client = new Client({accessToken: process.env("HUBSPOT_API_KEY")})
+    const client = new Client({accessToken: process.env.HUBSPOT_API_KEY})
     const contact = {
         properties: {
             name: "Henk",
