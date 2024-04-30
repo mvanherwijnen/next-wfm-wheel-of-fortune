@@ -1,4 +1,4 @@
-import { Client } from '@hubspot/api-client';
+import { Client, AssociationTypes } from '@hubspot/api-client';
 
 export const handler = async (event) => {
     const client = new Client({accessToken: process.env.HUBSPOT_API_KEY})
