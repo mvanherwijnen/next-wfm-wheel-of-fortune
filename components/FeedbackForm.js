@@ -5,6 +5,7 @@ export default function FeedbackForm() {
     console.log(JSON.stringify(e.target));
     await fetch("/.netlify/functions/lead", {method: 'POST', body: JSON.stringify({name: 'Kees', email: 'kees@keesie.nl'})})
     window.URL = "/success"
+    e.preventDefault();
   }
   return (
       <form onSubmit={submitHandler}>

@@ -1,7 +1,7 @@
-import Hubspot from '@hubspot/api-client';
+import { Client } from '@hubspot/api-client';
 
 export const handler = async (event) => {
-    const client = Hubspot.Client({accessToken: Netlify.env.get("HUBSPOT_API_KEY")})
+    const client = new Client({accessToken: Netlify.env("HUBSPOT_API_KEY")})
     const contact = {
         properties: {
             name: "Henk",
