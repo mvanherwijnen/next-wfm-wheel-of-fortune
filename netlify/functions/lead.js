@@ -12,6 +12,8 @@ export const handler = async (event) => {
     const deal = {
         properties: {
             dealname: `Rad van fortuin van ${name}`,
+            pipeline: "Prospectskoperspijplijn",
+            dealstage: "Spun Wheel of Fortune",
             amount: 1945
         }
     }
