@@ -1,17 +1,17 @@
 import { Client, AssociationTypes } from '@hubspot/api-client';
 
 export const handler = async (event) => {
+    const {name, email} = JSON.parse(event.body)
     const client = new Client({accessToken: process.env.HUBSPOT_API_KEY})
-    const firstname = "Henk";
     const contact = {
         properties: {
-            firstname,
-            email: "henk405@hotmail.com"
+            firstname: name,
+            email
         }
     }
     const deal = {
         properties: {
-            name: `Rad van fortuin van ${firstname}`,
+            name: `Rad van fortuin van ${name}`,
             amount: 1945
         }
     }
