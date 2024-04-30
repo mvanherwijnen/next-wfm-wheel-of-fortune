@@ -2,14 +2,16 @@ import { Client } from '@hubspot/api-client';
 
 export const handler = async (event) => {
     const client = new Client({accessToken: process.env.HUBSPOT_API_KEY})
+    const firstname = "Henk";
     const contact = {
         properties: {
-            firstname: "Henk",
+            firstname,
             email: "henk405@hotmail.com"
         }
     }
     const deal = {
         properties: {
+            name: `Rad van fortuin van ${firstname}`,
             amount: 1945
         }
     }
@@ -24,7 +26,6 @@ export const handler = async (event) => {
             {
                 "associationCategory": "HUBSPOT_DEFINED",
                 "associationTypeId": AssociationTypes.dealToContact
-                // AssociationTypes contains the most popular HubSpot defined association types
             }
         ]
     )
