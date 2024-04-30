@@ -24,8 +24,8 @@ export const handler = async (event) => {
         createContactResponse.id,
         [
             {
-                "associationCategory": "HUBSPOT_DEFINED",
-                "associationTypeId": AssociationTypes.dealToContact
+                associationCategory: "HUBSPOT_DEFINED",
+                associationTypeId: AssociationTypes.dealToContact
             }
         ]
     )

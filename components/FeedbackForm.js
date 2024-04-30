@@ -7,7 +7,7 @@ export default function FeedbackForm() {
 
   const submitHandler = async () => {
     await fetch("/.netlify/functions/lead", {method: 'POST', body: JSON.stringify({name, email})})
-    window.URL = "/success"
+    window.location.href = "/success"
   }
   return (
   <div>
