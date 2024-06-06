@@ -84,8 +84,8 @@ export default function Success() {
         buttonText='Spin'
         isOnlyOnce={true}
         size={600}
-        upDuration={100}
-        downDuration={440}
+        upDuration={234}
+        downDuration={442}
         fontFamily='Arial'
       />
       <h1>Gegevens ontvangen!</h1>

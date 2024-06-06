@@ -80,13 +80,13 @@ export const WheelComponent = ({
     const duration = new Date().getTime() - spinStart
     let progress = 0
     let finished = false
-    if (duration < upTime + Math.random() * 100) {
-      progress = duration / upTime + Math.random() * 100
+    if (duration < upTime) {
+      progress = duration / upTime
       angleDelta = maxSpeed * Math.sin((progress * Math.PI) / 2)
     } else {
       if (winningSegment) {
         if (currentSegment === winningSegment && frames > segments.length) {
-          progress = duration / upTime + Math.random() * 100
+          progress = duration / upTime
           angleDelta =
             maxSpeed * Math.sin((progress * Math.PI) / 2 + Math.PI / 2)
           progress = 1
