@@ -57,9 +57,12 @@ export default function Success() {
   useEffect(() => {dealIdSearchParam && setDealId(dealIdSearchParam)}, [dealIdSearchParam])
   const onFinished = async (prize) => {
     console.log(dealId)
-    await fetch("/.netlify/functions/prize", {method: 'POST', body: JSON.stringify({ dealId, prize })})
     setPrize(prize)
   }
+
+  useEffect(() => {
+    async () => prize && await fetch("/.netlify/functions/prize", {method: 'POST', body: JSON.stringify({ dealId, prize })})();
+  }, [dealId, prize])
 
   return (
     <div className="container">
