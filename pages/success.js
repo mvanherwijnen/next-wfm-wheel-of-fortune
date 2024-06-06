@@ -68,7 +68,7 @@ export default function Success() {
   }, [dealId, prize])
 
   useEffect(() => {
-    setRand(Math.random() * 100)
+    setRand(Math.random() * 400)
   }, [])
   console.log(rand);
   return (
@@ -89,8 +89,8 @@ export default function Success() {
         buttonText='Spin'
         isOnlyOnce={true}
         size={600}
-        upDuration={234 + rand}
-        downDuration={442 + rand}
+        upDuration={56 + rand}
+        downDuration={112 + rand}
         fontFamily='Arial'
       />}
       <h1>Gegevens ontvangen!</h1>
