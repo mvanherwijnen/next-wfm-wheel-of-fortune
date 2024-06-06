@@ -74,7 +74,7 @@ export default function Success() {
       </Head>
 
       <main style={{position: 'relative'}}>
-        {prize && <div style={{position: 'absolute', backgroundColor: 'white', fontSize: "32px", padding: "32px 16px", borderRadius: "8px", width: "800px", textAlign: "center", opacity: "95%"}}>{`🎉🎉 ${prize} 🎉🎉`}</div>}
+        {prize && <div style={{position: 'absolute', backgroundColor: 'white', fontSize: "32px", padding: "32px 16px", borderRadius: "8px", width: "800px", textAlign: "center", opacity: "95%"}}>{`${prize === "Helaas geen prijs" ? "😭😭" : "🎉🎉"} ${prize} ${prize === "Helaas geen prijs" ? "😭😭" : "🎉🎉"}`}</div>}
       <WheelComponent
         segments={segments}
         segColors={segColors}
