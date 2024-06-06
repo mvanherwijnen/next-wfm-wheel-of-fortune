@@ -16,7 +16,7 @@ export default function Success() {
     'Tweede deelnemer gratis bij deelname aan training',
     'Helaas geen prijs',
     'Gratis koffie uurtje sparren',
-    'Helaas geen prijs ',
+    'Helaas geen prijs',
     'Gratis koffie uurtje sparren',
     'Helaas geen prijs',
     'Gratis koffie uurtje sparren',
@@ -25,14 +25,14 @@ export default function Success() {
     'Gratis koffie uurtje sparren',
     'Helaas geen prijs',
     'Gratis koffie uurtje sparren',
-    'Helaas geen prijs ',
+    'Helaas geen prijs',
     'Gratis koffie uurtje sparren',
     'Helaas geen prijs',
     '20% korting op een assessment',
     'Gratis koffie uurtje sparren',
     'Helaas geen prijs',
     'Gratis koffie uurtje sparren',
-    'Helaas geen prijs ',
+    'Helaas geen prijs',
     'Gratis koffie uurtje sparren',
     'Helaas geen prijs',
     '10% korting op een assessment',
@@ -43,7 +43,7 @@ export default function Success() {
     'Gratis koffie uurtje sparren',
     'Helaas geen prijs',
     'Gratis koffie uurtje sparren',
-    'Helaas geen prijs ',
+    'Helaas geen prijs',
     'Gratis koffie uurtje sparren',
     '15% korting op een training',
     'Helaas geen prijs',
@@ -61,7 +61,9 @@ export default function Success() {
   }
 
   useEffect(() => {
-    async () => prize && await fetch("/.netlify/functions/prize", {method: 'POST', body: JSON.stringify({ dealId, prize })})();
+    const doThing = async () => prize && await fetch("/.netlify/functions/prize", {method: 'POST', body: JSON.stringify({ dealId, prize })});
+    console.log(dealId, prize)
+    doThing();
   }, [dealId, prize])
 
   return (
