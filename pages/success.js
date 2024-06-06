@@ -52,8 +52,9 @@ export default function Success() {
     '#3C5270',
     '#F36F21',
   ]
-  const onFinished = async (prize) => {
+  const onFinished = async (prize, dealId) => {
     setPrize(prize)
+    console.log(dealId)
     await fetch("/.netlify/functions/prize", {method: 'POST', body: JSON.stringify({ dealId, prize })})
   }
 
@@ -69,7 +70,7 @@ export default function Success() {
       <WheelComponent
         segments={segments}
         segColors={segColors}
-        onFinished={(prize) => onFinished(prize)}
+        onFinished={(prize) => onFinished(prize, dealId)}
         primaryColor='black'
         contrastColor='white'
         buttonText='Spin'
