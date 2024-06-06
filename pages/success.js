@@ -90,7 +90,7 @@ export default function Success() {
         isOnlyOnce={true}
         size={600}
         upDuration={234 + rand}
-        downDuration={442}
+        downDuration={442 + rand}
         fontFamily='Arial'
       />}
       <h1>Gegevens ontvangen!</h1>
