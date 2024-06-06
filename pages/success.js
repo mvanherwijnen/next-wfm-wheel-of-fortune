@@ -52,6 +52,8 @@ export default function Success() {
     '#3C5270',
     '#F36F21',
   ]
+
+  console.log(dealIdSearchParam);
   useEffect(() => {dealIdSearchParam && setDealId(dealIdSearchParam)}, [dealIdSearchParam])
   const onFinished = async (prize) => {
     console.log(dealId)
