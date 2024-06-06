@@ -105,8 +105,8 @@ export const WheelComponent = ({
     angleCurrent += angleDelta
     while (angleCurrent >= Math.PI * 2) angleCurrent -= Math.PI * 2
     if (finished) {
-      setFinished(true)
       onFinished(currentSegment)
+      setFinished(true)
       clearInterval(timerHandle)
       timerHandle = 0
       angleDelta = 0

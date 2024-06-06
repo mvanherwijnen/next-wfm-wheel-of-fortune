@@ -9,7 +9,6 @@ export default function Success() {
   const [prize, setPrize] = useState('');
   const searchParams = useSearchParams();
   const dealId = searchParams.get('dealId');
-  console.log(dealId)
   const segments = [
     'Gratis koffie uurtje sparren',
     'Helaas geen prijs',
@@ -53,9 +52,9 @@ export default function Success() {
     '#F36F21',
   ]
   const onFinished = async (prize, dealId) => {
-    setPrize(prize)
     console.log(dealId)
     await fetch("/.netlify/functions/prize", {method: 'POST', body: JSON.stringify({ dealId, prize })})
+    setPrize(prize)
   }
 
   return (
@@ -70,7 +69,7 @@ export default function Success() {
       <WheelComponent
         segments={segments}
         segColors={segColors}
-        onFinished={(prize) => onFinished(prize, dealId)}
+        onFinished={async (prize) => await onFinished(prize, dealId)}
         primaryColor='black'
         contrastColor='white'
         buttonText='Spin'
