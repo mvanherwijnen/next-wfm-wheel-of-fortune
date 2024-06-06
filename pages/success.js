@@ -52,7 +52,7 @@ export default function Success() {
     '#3C5270',
     '#F36F21',
   ]
-  useEffect(() => {setDealId(dealIdSearchParam)}, [dealIdSearchParam])
+  useEffect(() => {dealIdSearchParam && setDealId(dealIdSearchParam)}, [dealIdSearchParam])
   const onFinished = async (prize) => {
     console.log(dealId)
     await fetch("/.netlify/functions/prize", {method: 'POST', body: JSON.stringify({ dealId, prize })})
