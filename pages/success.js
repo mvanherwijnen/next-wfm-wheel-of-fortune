@@ -70,7 +70,7 @@ export default function Success() {
   useEffect(() => {
     setRand(Math.random() * 100)
   }, [])
-
+  console.log(rand);
   return (
     <div className="container">
       <Head>
@@ -80,7 +80,7 @@ export default function Success() {
 
       <main style={{position: 'relative'}}>
         {prize && <div style={{position: 'absolute', backgroundColor: 'white', fontSize: "32px", padding: "32px 16px", borderRadius: "8px", width: "800px", textAlign: "center", opacity: "95%"}}>{`${prize === "Helaas geen prijs" ? "😭😭" : "🎉🎉"} ${prize} ${prize === "Helaas geen prijs" ? "😭😭" : "🎉🎉"}`}</div>}
-      <WheelComponent
+      {rand && <WheelComponent
         segments={segments}
         segColors={segColors}
         onFinished={(prize) => onFinished(prize)}
@@ -92,7 +92,7 @@ export default function Success() {
         upDuration={234 + rand}
         downDuration={442}
         fontFamily='Arial'
-      />
+      />}
       <h1>Gegevens ontvangen!</h1>
         <p>Draai nu aan het rad en maak vrijblijvend kans op een NEXT WFM scan!</p>
       </main>
