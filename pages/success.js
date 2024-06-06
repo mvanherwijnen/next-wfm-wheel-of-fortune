@@ -79,9 +79,9 @@ export default function Success() {
         segments={segments}
         segColors={segColors}
         onFinished={(prize) => onFinished(prize)}
-        primaryColor='#EFEEEE'
+        primaryColor='#484749'
         contrastColor='white'
-        buttonText='Geef een draai'
+        buttonText='Spin'
         isOnlyOnce={true}
         size={600}
         upDuration={100}
