@@ -55,7 +55,7 @@ export default function Success() {
 
   console.log(dealIdSearchParam);
   useEffect(() => {dealIdSearchParam && setDealId(dealIdSearchParam)}, [dealIdSearchParam])
-  const onFinished = async (prize) => {
+  const onFinished = (prize) => {
     console.log(dealId)
     setPrize(prize)
   }
@@ -78,14 +78,14 @@ export default function Success() {
       <WheelComponent
         segments={segments}
         segColors={segColors}
-        onFinished={async (prize) => await onFinished(prize)}
-        primaryColor='black'
+        onFinished={(prize) => onFinished(prize)}
+        primaryColor='#EFEEEE'
         contrastColor='white'
-        buttonText='Spin'
+        buttonText='Geef een draai'
         isOnlyOnce={true}
         size={600}
         upDuration={100}
-        downDuration={400}
+        downDuration={440}
         fontFamily='Arial'
       />
       <h1>Gegevens ontvangen!</h1>

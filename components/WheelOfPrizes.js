@@ -71,22 +71,23 @@ export const WheelComponent = ({
       spinStart = new Date().getTime()
       maxSpeed = Math.PI / segments.length
       frames = 0
-      timerHandle = window.setInterval(onTimerTick, timerDelay)
+      rand = Math.random() * 100
+      timerHandle = window.setInterval(onTimerTick(rand), timerDelay)
     }
   }
-  const onTimerTick = () => {
+  const onTimerTick = (rand) => () => {
     frames++
     draw()
     const duration = new Date().getTime() - spinStart
     let progress = 0
     let finished = false
-    if (duration < upTime) {
-      progress = duration / upTime
+    if (duration < upTime + rand) {
+      progress = duration / upTime + rand
       angleDelta = maxSpeed * Math.sin((progress * Math.PI) / 2)
     } else {
       if (winningSegment) {
         if (currentSegment === winningSegment && frames > segments.length) {
-          progress = duration / upTime
+          progress = duration / upTime + rand
           angleDelta =
             maxSpeed * Math.sin((progress * Math.PI) / 2 + Math.PI / 2)
           progress = 1
