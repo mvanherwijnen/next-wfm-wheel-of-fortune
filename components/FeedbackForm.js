@@ -1,5 +1,5 @@
 import styles from './FeedbackForm.module.css'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function FeedbackForm() {
   const [name, setName] = useState('');
@@ -19,6 +19,8 @@ export default function FeedbackForm() {
     }
     setEmailError('');
     const response = await fetch("/.netlify/functions/lead", {method: 'POST', body: JSON.stringify({name, email})})
+    setName('');
+    setEmail('');
     window.location.href = `/success?dealId=${(await response.json()).dealId}`
   }
   return (
