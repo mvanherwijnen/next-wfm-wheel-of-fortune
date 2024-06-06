@@ -1,4 +1,4 @@
-import { Client, AssociationTypes } from '@hubspot/api-client';
+import { Client } from '@hubspot/api-client';
 
 export const handler = async (event) => {
     const {dealId, prize} = JSON.parse(event.body)

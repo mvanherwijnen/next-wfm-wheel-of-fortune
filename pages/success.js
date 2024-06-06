@@ -9,6 +9,7 @@ export default function Success() {
   const [prize, setPrize] = useState('');
   const searchParams = useSearchParams();
   const dealId = searchParams.get('dealId');
+  console.log(dealId)
   const segments = [
     'Gratis koffie uurtje sparren',
     'Helaas geen prijs',
@@ -53,7 +54,7 @@ export default function Success() {
   ]
   const onFinished = async (prize) => {
     setPrize(prize)
-    await fetch("/.netlify/functions/prize", {method: 'POST', body: JSON.stringify({dealId, prize})})
+    await fetch("/.netlify/functions/prize", {method: 'POST', body: JSON.stringify({ dealId, prize })})
   }
 
   return (
