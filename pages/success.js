@@ -2,30 +2,58 @@ import Head from 'next/head'
 import { WheelComponent } from '@components/WheelOfPrizes'
 
 import Footer from '@components/Footer'
+import { useState } from 'react'
+import { useSearchParams } from 'next/navigation';
 
 export default function Success() {
+  const [prize, setPrize] = useState('');
+  const searchParams = useSearchParams();
+  const dealId = searchParams.get('dealId');
   const segments = [
-    'better luck next time',
-    'won 70',
-    'NEXT WFM Scan',
-    'better luck next time',
-    'won 2',
-    'won uber pass',
-    'better luck next time',
-    'won a voucher'
+    'Gratis koffie uurtje sparren',
+    'Helaas geen prijs',
+    'Tweede deelnemer gratis bij deelname aan training',
+    'Helaas geen prijs',
+    'Gratis koffie uurtje sparren',
+    'Helaas geen prijs ',
+    'Gratis koffie uurtje sparren',
+    'Helaas geen prijs',
+    'Gratis koffie uurtje sparren',
+    'Helaas geen prijs',
+    '20% op een complete WFM scan',
+    'Gratis koffie uurtje sparren',
+    'Helaas geen prijs',
+    'Gratis koffie uurtje sparren',
+    'Helaas geen prijs ',
+    'Gratis koffie uurtje sparren',
+    'Helaas geen prijs',
+    '20% korting op een assessment',
+    'Gratis koffie uurtje sparren',
+    'Helaas geen prijs',
+    'Gratis koffie uurtje sparren',
+    'Helaas geen prijs ',
+    'Gratis koffie uurtje sparren',
+    'Helaas geen prijs',
+    '10% korting op een assessment',
+    'Gratis koffie uurtje sparren',
+    'Helaas geen prijs',
+    'Gratis koffie uurtje sparren',
+    '20% op een complete WFM scan',
+    'Gratis koffie uurtje sparren',
+    'Helaas geen prijs',
+    'Gratis koffie uurtje sparren',
+    'Helaas geen prijs ',
+    'Gratis koffie uurtje sparren',
+    '15% korting op een training',
+    'Helaas geen prijs',
   ]
   const segColors = [
-    '#EE4040',
-    '#F0CF50',
-    '#815CD1',
-    '#3DA5E0',
-    '#34A24F',
-    '#F9AA1F',
-    '#EC3F3F',
-    '#FF9000'
+    '#3C5270',
+    '#F36F21',
   ]
-  const onFinished = (winner) => {
-    console.log(winner)
+  const onFinished = async (prize) => {
+    setPrize(prize)
+    await fetch("/.netlify/functions/prize", {method: 'POST', body: JSON.stringify({dealId, prize})})
   }
 
   return (
@@ -35,9 +63,8 @@ export default function Success() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
-        <h1>Gegevens ontvangen!</h1>
-        <p>Draai nu aan het rad en maak vrijblijvend kans op een NEXT WFM scan!</p>
+      <main style={{position: 'relative'}}>
+        {prize && <div style={{position: 'absolute', backgroundColor: 'white', fontSize: "32px", padding: "32px 16px", borderRadius: "8px", width: "800px", textAlign: "center", opacity: "95%"}}>{`🎉🎉 ${winner} 🎉🎉`}</div>}
       <WheelComponent
         segments={segments}
         segColors={segColors}
@@ -45,12 +72,14 @@ export default function Success() {
         primaryColor='black'
         contrastColor='white'
         buttonText='Spin'
-        isOnlyOnce={false}
-        size={290}
+        isOnlyOnce={true}
+        size={600}
         upDuration={100}
-        downDuration={1000}
+        downDuration={400}
         fontFamily='Arial'
       />
+      <h1>Gegevens ontvangen!</h1>
+        <p>Draai nu aan het rad en maak vrijblijvend kans op een NEXT WFM scan!</p>
       </main>
 
       <Footer />

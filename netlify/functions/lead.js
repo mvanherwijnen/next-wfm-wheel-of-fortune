@@ -14,7 +14,7 @@ export const handler = async (event) => {
             dealname: `Rad van fortuin van ${name}`,
             pipeline: "default",
             dealstage: "587006962",
-            amount: 1945
+            amount: 100
         }
     }
     const createContactResponse = await client.crm.contacts.basicApi.create(contact)
@@ -33,6 +33,6 @@ export const handler = async (event) => {
     )
     return {
         statusCode: 200,
-        body: JSON.stringify(event)
+        body: JSON.stringify({dealId: createDealResponse.id})
     }
 }

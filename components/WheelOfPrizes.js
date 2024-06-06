@@ -10,7 +10,7 @@ export const WheelComponent = ({
   contrastColor = 'white',
   buttonText = 'Spin',
   isOnlyOnce = true,
-  size = window.innerWidth,
+  size = window ?? window.innerWidth,
   upDuration = 100,
   downDuration = 1000,
   fontFamily = 'proxima-nova',
@@ -145,7 +145,7 @@ export const WheelComponent = ({
     ctx.rotate((lastAngle + angle) / 2)
     ctx.fillStyle = contrastColor
     ctx.font = `bold ${fontSize} ${fontFamily}`
-    ctx.fillText(value.substring(0, 21), size / 2 + 20, 0)
+    ctx.fillText(value, size / 2 + 20, 0)
     ctx.restore()
   }
 
@@ -227,7 +227,6 @@ export const WheelComponent = ({
     const ctx = canvasContext
     ctx.clearRect(0, 0, dimension, dimension)
   }
-
   return (
     <div id={wheelId.current}>
       <canvas

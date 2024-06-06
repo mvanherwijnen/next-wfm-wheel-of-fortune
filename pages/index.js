@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div className="container">
       <Head>
-        <title>Next.js Toolbox</title>
+        <title>Next WFM Rad van Fortuin</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

@@ -4,7 +4,7 @@ export default function Header({ title }) {
       <h1 className="title">{title}</h1>
       <p>
         Hoi 👋! <br/>
-        Laat je gegevens achter en maak kans op een WFM scan!
+        Laat je gegevens achter en maak kans op kortin op jouw WFM scan ter waarde van 5000 euro!
        </p>
        <p><em>Hoe werkt het?</em></p>
        <ol>
