@@ -2,13 +2,14 @@ import Head from 'next/head'
 import { WheelComponent } from '@components/WheelOfPrizes'
 
 import Footer from '@components/Footer'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useSearchParams } from 'next/navigation';
 
 export default function Success() {
   const [prize, setPrize] = useState('');
+  const [dealId, setDealId] = useState('');
   const searchParams = useSearchParams();
-  const dealId = searchParams.get('dealId');
+  const dealIdSearchParam = searchParams.get('dealId');
   const segments = [
     'Gratis koffie uurtje sparren',
     'Helaas geen prijs',
@@ -51,7 +52,8 @@ export default function Success() {
     '#3C5270',
     '#F36F21',
   ]
-  const onFinished = async (prize, dealId) => {
+  useEffect(() => {setDealId(dealIdSearchParam)}, [dealIdSearchParam])
+  const onFinished = async (prize) => {
     console.log(dealId)
     await fetch("/.netlify/functions/prize", {method: 'POST', body: JSON.stringify({ dealId, prize })})
     setPrize(prize)
@@ -69,7 +71,7 @@ export default function Success() {
       <WheelComponent
         segments={segments}
         segColors={segColors}
-        onFinished={async (prize) => await onFinished(prize, dealId)}
+        onFinished={async (prize) => await onFinished(prize)}
         primaryColor='black'
         contrastColor='white'
         buttonText='Spin'
