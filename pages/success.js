@@ -8,6 +8,7 @@ import { useSearchParams } from 'next/navigation';
 export default function Success() {
   const [prize, setPrize] = useState('');
   const [dealId, setDealId] = useState('');
+  const [rand, setRand] = useState(0);
   const searchParams = useSearchParams();
   const dealIdSearchParam = searchParams.get('dealId');
   const segments = [
@@ -66,6 +67,10 @@ export default function Success() {
     doThing();
   }, [dealId, prize])
 
+  useEffect(() => {
+    setRand(Math.random() * 100)
+  }, [])
+
   return (
     <div className="container">
       <Head>
@@ -84,7 +89,7 @@ export default function Success() {
         buttonText='Spin'
         isOnlyOnce={true}
         size={600}
-        upDuration={234}
+        upDuration={234 + rand}
         downDuration={442}
         fontFamily='Arial'
       />
