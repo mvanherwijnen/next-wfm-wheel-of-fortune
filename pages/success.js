@@ -4,6 +4,8 @@ import { WheelComponent } from '@components/WheelOfPrizes'
 import Footer from '@components/Footer'
 import { useEffect, useState } from 'react'
 import { useSearchParams } from 'next/navigation';
+import ReactConfetti from 'react-confetti';
+import useWindowSize from 'react-use/lib/useWindowSize'
 
 export default function Success() {
   const [prize, setPrize] = useState('');
@@ -67,12 +69,15 @@ export default function Success() {
     doThing();
   }, [dealId, prize])
 
+  const { width, height } = useWindowSize();
+
   useEffect(() => {
     setRand(Math.random() * 400)
   }, [])
   console.log(rand);
   return (
     <div className="container">
+      {prize && <ReactConfetti width={width} height={height}/>}
       <Head>
         <title>Next WFM</title>
         <link rel="icon" href="/favicon.ico" />
