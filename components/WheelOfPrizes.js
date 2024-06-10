@@ -144,7 +144,7 @@ export const WheelComponent = ({
     ctx.translate(centerX, centerY)
     ctx.rotate((lastAngle + angle) / 2)
     ctx.fillStyle = contrastColor
-    ctx.font = `bold ${fontSize} ${fontFamily}`
+    ctx.font = `bold ${value.includes('De gratis WFM') ? '2em' : value.includes('deelname') ? '1em' : fontSize} ${fontFamily}`
     ctx.fillText(value, size / 2 + 20, 0)
     ctx.restore()
   }

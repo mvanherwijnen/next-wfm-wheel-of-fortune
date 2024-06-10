@@ -24,7 +24,7 @@ export default function Success() {
     'Helaas geen prijs',
     'Gratis uurtje sparren',
     'Helaas geen prijs',
-    '20% korting op een WFM scan',
+    'De gratis WFM scan',
     'Gratis uurtje sparren',
     'Helaas geen prijs',
     'Gratis uurtje sparren',
@@ -83,8 +83,8 @@ export default function Success() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main style={{position: 'relative'}}>
-        {prize && <div style={{position: 'absolute', backgroundColor: 'white', fontSize: "32px", padding: "0px 16px 12px", marginTop: "-6px", borderRadius: "8px", width: "800px", textAlign: "center", opacity: "95%"}}>{`${prize === "Helaas geen prijs" ? "😭😭" : "🎉🎉"} ${prize} ${prize === "Helaas geen prijs" ? "😭😭" : "🎉🎉"}`}</div>}
+      <main style={{position: 'relative', display: "flex", alignItems: "center", flexDirection: "row"}}>
+        {prize && <div style={{position: 'absolute', backgroundColor: 'white', fontSize: "32px", padding: "0px 16px 12px", marginLeft: "-132px", borderRadius: "8px", width: "800px", textAlign: "center", opacity: "95%"}}>{`${prize === "Helaas geen prijs" ? "😭😭" : "🎉🎉"} ${prize} ${prize === "Helaas geen prijs" ? "😭😭" : "🎉🎉"}`}</div>}
       {rand && <WheelComponent
         segments={segments}
         segColors={segColors}
@@ -97,9 +97,13 @@ export default function Success() {
         upDuration={56 + rand}
         downDuration={112 + rand}
         fontFamily='Arial'
+        fontSize='1.5em'
       />}
-      <h1>Gegevens ontvangen!</h1>
-        <p>Draai nu aan het rad en maak vrijblijvend kans op 20% korting op een NEXT WFM scan!</p>
+      <div style={{width: "400px", marginLeft: "24px"}}>
+        <h1>Gegevens ontvangen!</h1>
+        <p>Draai nu aan het rad en maak vrijblijvend kans op een NEXT WFM scan!</p>
+      </div>
+      
       </main>
 
       <Footer />
