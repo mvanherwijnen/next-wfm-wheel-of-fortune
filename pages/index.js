@@ -7,12 +7,12 @@ export default function Home() {
   return (
     <div className="container">
       <Head>
-        <title>Next WFM Rad van Fortuin</title>
+        <title>NEXT wfm Rad van Fortuin</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main>
-        <Header title="Next WFM Rad van Fortuin" />
+        <Header title="NEXT wfm Rad van Fortuin" />
         <hr />
         <FeedbackForm />
       </main>

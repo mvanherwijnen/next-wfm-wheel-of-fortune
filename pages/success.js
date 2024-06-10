@@ -14,40 +14,40 @@ export default function Success() {
   const searchParams = useSearchParams();
   const dealIdSearchParam = searchParams.get('dealId');
   const segments = [
-    'Gratis koffie uurtje sparren',
+    'Gratis uurtje sparren',
     'Helaas geen prijs',
-    'Tweede deelnemer gratis bij deelname aan training',
+    'Bij deelname aan een training, is de tweede deelnemer gratis',
     'Helaas geen prijs',
-    'Gratis koffie uurtje sparren',
+    'Gratis uurtje sparren',
     'Helaas geen prijs',
-    'Gratis koffie uurtje sparren',
+    'Gratis uurtje sparren',
     'Helaas geen prijs',
-    'Gratis koffie uurtje sparren',
+    'Gratis uurtje sparren',
     'Helaas geen prijs',
-    '20% op een complete WFM scan',
-    'Gratis koffie uurtje sparren',
+    '20% korting op een WFM scan',
+    'Gratis uurtje sparren',
     'Helaas geen prijs',
-    'Gratis koffie uurtje sparren',
+    'Gratis uurtje sparren',
     'Helaas geen prijs',
-    'Gratis koffie uurtje sparren',
+    'Gratis uurtje sparren',
     'Helaas geen prijs',
     '20% korting op een assessment',
-    'Gratis koffie uurtje sparren',
+    'Gratis uurtje sparren',
     'Helaas geen prijs',
-    'Gratis koffie uurtje sparren',
+    'Gratis uurtje sparren',
     'Helaas geen prijs',
-    'Gratis koffie uurtje sparren',
+    'Gratis uurtje sparren',
     'Helaas geen prijs',
     '10% korting op een assessment',
-    'Gratis koffie uurtje sparren',
+    'Gratis uurtje sparren',
     'Helaas geen prijs',
-    'Gratis koffie uurtje sparren',
-    '20% op een complete WFM scan',
-    'Gratis koffie uurtje sparren',
+    'Gratis uurtje sparren',
+    '20% korting op een WFM scan',
+    'Gratis uurtje sparren',
     'Helaas geen prijs',
-    'Gratis koffie uurtje sparren',
+    'Gratis uurtje sparren',
     'Helaas geen prijs',
-    'Gratis koffie uurtje sparren',
+    'Gratis uurtje sparren',
     '15% korting op een training',
     'Helaas geen prijs',
   ]
@@ -99,7 +99,7 @@ export default function Success() {
         fontFamily='Arial'
       />}
       <h1>Gegevens ontvangen!</h1>
-        <p>Draai nu aan het rad en maak vrijblijvend kans op een NEXT WFM scan!</p>
+        <p>Draai nu aan het rad en maak vrijblijvend kans op 20% korting op een NEXT WFM scan!</p>
       </main>
 
       <Footer />

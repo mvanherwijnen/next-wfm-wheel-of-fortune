@@ -28,7 +28,7 @@ export default function FeedbackForm() {
       {nameError ? <div style={{color: 'red'}}>{nameError}</div> : <label htmlFor="name">Naam</label>}
       <input id="name" className={styles['form-field']} type="text" name="name" value={name} onChange={(e) => setName(e.target.value)} />
 
-      {emailError ? <div style={{color: 'red'}}>{emailError}</div> : <label htmlFor="email">Emailadres</label>}
+      {emailError ? <div style={{color: 'red'}}>{emailError}</div> : <label htmlFor="email">E-mailadres</label>}
       <input id="email" className={styles['form-field']} type="email" name="email" required value={email} onChange={(e) => setEmail(e.target.value)}/>
 
       <button className={styles.button} type="submit" onClick={submitHandler}>Draai aan het rad!</button>
