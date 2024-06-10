@@ -84,7 +84,7 @@ export default function Success() {
       </Head>
 
       <main style={{position: 'relative'}}>
-        {prize && <div style={{position: 'absolute', backgroundColor: 'white', fontSize: "32px", padding: "32px 16px", borderRadius: "8px", width: "800px", textAlign: "center", opacity: "95%"}}>{`${prize === "Helaas geen prijs" ? "😭😭" : "🎉🎉"} ${prize} ${prize === "Helaas geen prijs" ? "😭😭" : "🎉🎉"}`}</div>}
+        {prize && <div style={{position: 'absolute', backgroundColor: 'white', fontSize: "32px", padding: "0px 16px 12px", marginTop: "-6px", borderRadius: "8px", width: "800px", textAlign: "center", opacity: "95%"}}>{`${prize === "Helaas geen prijs" ? "😭😭" : "🎉🎉"} ${prize} ${prize === "Helaas geen prijs" ? "😭😭" : "🎉🎉"}`}</div>}
       {rand && <WheelComponent
         segments={segments}
         segColors={segColors}
@@ -93,7 +93,7 @@ export default function Success() {
         contrastColor='white'
         buttonText='Spin'
         isOnlyOnce={true}
-        size={600}
+        size={height > width ? width / 2.1 : height / 2.1}
         upDuration={56 + rand}
         downDuration={112 + rand}
         fontFamily='Arial'
