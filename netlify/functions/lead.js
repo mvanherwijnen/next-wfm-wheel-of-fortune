@@ -13,7 +13,7 @@ export const handler = async (event) => {
         properties: {
             dealname: `Rad van fortuin van ${name}`,
             pipeline: "default",
-            dealstage: "587006962",
+            dealstage: process.env.HUBSPOT_DEAL_STAGE_ID,
             amount: 100
         }
     }
